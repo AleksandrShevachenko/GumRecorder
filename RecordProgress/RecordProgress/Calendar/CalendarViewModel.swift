@@ -179,7 +179,17 @@ final class MockWorkout {
     
     static let shared = MockWorkout()
     
-    var workouts: [Workout] = [
+    private func createDate(daysFromNow: Int) -> Date {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.year, .month, .day], from: Date())
+        components.hour = 12 // Устанавливаем 12:00 для избежания проблем с часовыми поясами
+        if let baseDate = calendar.date(from: components) {
+            return calendar.date(byAdding: .day, value: daysFromNow, to: baseDate) ?? baseDate
+        }
+        return Date()
+    }
+    
+    lazy var workouts: [Workout] = [
         // Тренировка на сегодня
         Workout(
             exerceses: [
@@ -209,8 +219,8 @@ final class MockWorkout {
                 )
             ],
             comment: "Отличная тренировка!",
-            timeStamp: Int(Date().timeIntervalSince1970),
-            date: Date()
+            timeStamp: Int(createDate(daysFromNow: 0).timeIntervalSince1970),
+            date: createDate(daysFromNow: 0)
         ),
         // Тренировка 3 дня назад
         Workout(
@@ -241,8 +251,8 @@ final class MockWorkout {
                 )
             ],
             comment: "Работа с собственным весом",
-            timeStamp: Int(Date().addingTimeInterval(-3 * 24 * 60 * 60).timeIntervalSince1970),
-            date: Date().addingTimeInterval(-3 * 24 * 60 * 60)
+            timeStamp: Int(createDate(daysFromNow: -3).timeIntervalSince1970),
+            date: createDate(daysFromNow: -3)
             
         ),
         // Тренировка неделю назад
@@ -262,8 +272,8 @@ final class MockWorkout {
                 )
             ],
             comment: "Тяжёлая тренировка ног и спины",
-            timeStamp: Int(Date().addingTimeInterval(-7 * 24 * 60 * 60).timeIntervalSince1970),
-            date: Date().addingTimeInterval(-7 * 24 * 60 * 60)
+            timeStamp: Int(createDate(daysFromNow: -7).timeIntervalSince1970),
+            date: createDate(daysFromNow: -7)
         ),
         // Тренировка 10 дней назад
         Workout(
@@ -294,8 +304,8 @@ final class MockWorkout {
                 )
             ],
             comment: "Комплексная тренировка",
-            timeStamp: Int(Date().addingTimeInterval(-10 * 24 * 60 * 60).timeIntervalSince1970),
-            date: Date().addingTimeInterval(-10 * 24 * 60 * 60)
+            timeStamp: Int(createDate(daysFromNow: -10).timeIntervalSince1970),
+            date: createDate(daysFromNow: -10)
         ),
         // Тренировка в следующем месяце для тестирования
         Workout(
@@ -312,8 +322,8 @@ final class MockWorkout {
                 )
             ],
             comment: "Запланированная кардио сессия",
-            timeStamp: Int(Date().addingTimeInterval(35 * 24 * 60 * 60).timeIntervalSince1970),
-            date: Date().addingTimeInterval(35 * 24 * 60 * 60)
+            timeStamp: Int(createDate(daysFromNow: 35).timeIntervalSince1970),
+            date: createDate(daysFromNow: 35)
         )
     ]
 }

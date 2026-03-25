@@ -36,8 +36,7 @@ struct CalendarView: View {
             .frame(height: 280) // Фиксированная высота для календаря
             List(vm.worckoutForDay.exerceses) { exercise in
                 ExerciseView(
-                    exercise: exercise,
-                    needShowSets: true
+                    exercise: exercise
                 )
                 
             }
