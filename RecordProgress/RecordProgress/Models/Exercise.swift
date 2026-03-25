@@ -9,11 +9,11 @@ class Exercise: Identifiable {
     let id: Int
     let name: String
     var isChoosen: Bool
-    var sets: [Set]
+    var sets: [ExerciseSet]
     var doubleWeigth: Bool
     var bodyweight: Bool
     
-    init(id: Int, name: String, isChoosen: Bool, sets: [Set], doubleWeigth: Bool, bodyweight: Bool) {
+    init(id: Int, name: String, isChoosen: Bool, sets: [ExerciseSet], doubleWeigth: Bool, bodyweight: Bool) {
         self.id = id
         self.name = name
         self.isChoosen = isChoosen

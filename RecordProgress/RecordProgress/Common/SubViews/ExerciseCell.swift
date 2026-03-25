@@ -32,33 +32,7 @@ struct ExerciseView: View {
             if needShowSets {
                 VStack(spacing: 8) {
                     ForEach(exercise.sets) { set in
-                        HStack {
-                            VStack {
-                                Text("Вес")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                Text("\(set.weight) кг")
-                                    .font(.body)
-                                    .fontWeight(.medium)
-                            }
-                            .frame(width: 80, height: 50)
-                            .background(Color.blue.opacity(0.1))
-                            .cornerRadius(10)
-                            
-                            VStack {
-                                Text("Повторы")
-                                    .font(.caption)
-                                    .foregroundColor(.secondary)
-                                Text("\(set.count)")
-                                    .font(.body)
-                                    .fontWeight(.medium)
-                            }
-                            .frame(width: 80, height: 50)
-                            .background(Color.green.opacity(0.1))
-                            .cornerRadius(10)
-                            
-                            Spacer()
-                        }
+                        SetRow(set: set)
                     }
                 }
                 .transition(.opacity.combined(with: .scale(scale: 0.95)))
@@ -67,5 +41,37 @@ struct ExerciseView: View {
         .padding()
         .background(Color.gray.opacity(0.05))
         .cornerRadius(12)
+    }
+}
+
+struct SetRow: View {
+    let set: ExerciseSet
+
+    var body: some View {
+        HStack(spacing: 15) {
+            VStack {
+                Text("exercise.weight")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                Text("\(set.weight) kg")
+                    .font(.body)
+                    .fontWeight(.medium)
+            }
+            .frame(maxWidth: .infinity, idealHeight: 60)
+            .background(Color.blue.opacity(0.1))
+            .cornerRadius(10)
+
+            VStack {
+                Text("exercise.reps")
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                Text("\(set.count)")
+                    .font(.body)
+                    .fontWeight(.medium)
+            }
+            .frame(maxWidth: .infinity, idealHeight: 60)
+            .background(Color.green.opacity(0.1))
+            .cornerRadius(10)
+        }
     }
 }

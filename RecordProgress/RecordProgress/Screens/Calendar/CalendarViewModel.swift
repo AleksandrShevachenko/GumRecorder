@@ -198,9 +198,9 @@ final class MockWorkout {
                     name: "Жим лёжа",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 80, count: 10),
-                        Set(weight: 85, count: 8),
-                        Set(weight: 90, count: 6)
+                        ExerciseSet(weight: 80, count: 10),
+                        ExerciseSet(weight: 85, count: 8),
+                        ExerciseSet(weight: 90, count: 6)
                     ],
                     doubleWeigth: false,
                     bodyweight: false
@@ -210,9 +210,9 @@ final class MockWorkout {
                     name: "Приседания",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 100, count: 12),
-                        Set(weight: 110, count: 10),
-                        Set(weight: 120, count: 8)
+                        ExerciseSet(weight: 100, count: 12),
+                        ExerciseSet(weight: 110, count: 10),
+                        ExerciseSet(weight: 120, count: 8)
                     ],
                     doubleWeigth: false,
                     bodyweight: false
@@ -230,9 +230,9 @@ final class MockWorkout {
                     name: "Подтягивания",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 0, count: 15),
-                        Set(weight: 0, count: 12),
-                        Set(weight: 0, count: 10)
+                        ExerciseSet(weight: 0, count: 15),
+                        ExerciseSet(weight: 0, count: 12),
+                        ExerciseSet(weight: 0, count: 10)
                     ],
                     doubleWeigth: false,
                     bodyweight: true
@@ -242,9 +242,9 @@ final class MockWorkout {
                     name: "Отжимания",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 0, count: 20),
-                        Set(weight: 0, count: 18),
-                        Set(weight: 0, count: 15)
+                        ExerciseSet(weight: 0, count: 20),
+                        ExerciseSet(weight: 0, count: 18),
+                        ExerciseSet(weight: 0, count: 15)
                     ],
                     doubleWeigth: false,
                     bodyweight: true
@@ -263,9 +263,9 @@ final class MockWorkout {
                     name: "Становая тяга",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 140, count: 5),
-                        Set(weight: 150, count: 3),
-                        Set(weight: 160, count: 1)
+                        ExerciseSet(weight: 140, count: 5),
+                        ExerciseSet(weight: 150, count: 3),
+                        ExerciseSet(weight: 160, count: 1)
                     ],
                     doubleWeigth: false,
                     bodyweight: false
@@ -283,9 +283,9 @@ final class MockWorkout {
                     name: "Жим гантелей",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 30, count: 12),
-                        Set(weight: 32, count: 10),
-                        Set(weight: 35, count: 8)
+                        ExerciseSet(weight: 30, count: 12),
+                        ExerciseSet(weight: 32, count: 10),
+                        ExerciseSet(weight: 35, count: 8)
                     ],
                     doubleWeigth: true,
                     bodyweight: false
@@ -295,9 +295,9 @@ final class MockWorkout {
                     name: "Планка",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 0, count: 60), // count в секундах
-                        Set(weight: 0, count: 45),
-                        Set(weight: 0, count: 30)
+                        ExerciseSet(weight: 0, count: 60), // count в секундах
+                        ExerciseSet(weight: 0, count: 45),
+                        ExerciseSet(weight: 0, count: 30)
                     ],
                     doubleWeigth: false,
                     bodyweight: true
@@ -315,7 +315,7 @@ final class MockWorkout {
                     name: "Кардио",
                     isChoosen: true,
                     sets: [
-                        Set(weight: 0, count: 30) // 30 минут
+                        ExerciseSet(weight: 0, count: 30) // 30 минут
                     ],
                     doubleWeigth: false,
                     bodyweight: true

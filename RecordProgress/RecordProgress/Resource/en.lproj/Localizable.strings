@@ -1,0 +1,8 @@
+/* Exercise related strings */
+"exercise.weight" = "Weight";
+"exercise.reps" = "Reps";
+"exercise.sets" = "Sets";
+"exercise.name" = "Exercise";
+
+/* Calendar related strings */
+"calendar.today" = "Today";

@@ -34,16 +34,18 @@ struct CalendarView: View {
                 UIPageControl.appearance().isHidden = true
             }
             .frame(height: 280) // Фиксированная высота для календаря
-            List(vm.worckoutForDay.exerceses) { exercise in
-                ExerciseView(
-                    exercise: exercise
-                )
-                
+            Spacer()
+            ScrollView {
+                LazyVStack(spacing: 10) {
+                    ForEach(vm.worckoutForDay.exerceses) { exercise in
+                        ExerciseView(exercise: exercise)
+                    }
+                }
             }
             
             Spacer()
             Button("+", action: {
-                print("open new tain screen")
+                print("open new worckout screen")
             })
             .frame(width: 100, height: 50, alignment: .center)
             .background(Color.blue)
@@ -58,7 +60,7 @@ struct CalendarView: View {
         HStack {
             Group {
                 if vm.isCurrentMonth {
-                    Text("Today")
+                    Text("calendar.today")
                         .font(.title2)
                         .fontWeight(.bold)
                 } else {
@@ -75,7 +77,7 @@ struct CalendarView: View {
                 Button(action: {
                     vm.goToToday()
                 }) {
-                    Text("Сегодня")
+                    Text("calendar.today")
                         .font(.footnote)
                         .foregroundColor(.blue)
                         .padding(.horizontal, 12)
