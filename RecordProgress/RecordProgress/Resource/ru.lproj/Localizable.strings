@@ -1,0 +1,8 @@
+/* Строки для упражнений */
+"exercise.weight" = "Вес";
+"exercise.reps" = "Повторы";
+"exercise.sets" = "Подходы";
+"exercise.name" = "Упражнение";
+
+/* Строки для календаря */
+"calendar.today" = "Сегодня";
