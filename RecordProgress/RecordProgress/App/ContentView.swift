@@ -6,13 +6,20 @@
 //
 
 import SwiftUI
+import SwiftfulRouting
 
 struct ContentView: View {
+    
     var body: some View {
-        CalendarView()
+        RouterView { router in
+            HomeView(router: router)
+        }
     }
+    
 }
 
 #Preview {
     ContentView()
 }
+
+
